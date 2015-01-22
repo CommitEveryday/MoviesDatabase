@@ -1,0 +1,2 @@
+REFERENCE table_name у колонки
+http://www.postgresql.org/docs/8.2/static/ddl-constraints.html
