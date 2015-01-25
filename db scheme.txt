@@ -34,11 +34,11 @@
 <type label="SET" length="1" sql="SET" quote=""/>
 <type label="Bit" length="0" sql="bit" quote=""/>
 </group>
-</datatypes><table x="561" y="161" name="movie">
+</datatypes><table x="387" y="386" name="movie">
 <row name="id" null="0" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
-<row name="name" null="0" autoincrement="0">
+<row name="title" null="0" autoincrement="0">
 <datatype>VARCHAR(100)</datatype>
 <default>'NULL'</default></row>
 <row name="premiere" null="1" autoincrement="0">
@@ -48,7 +48,7 @@
 <part>id</part>
 </key>
 </table>
-<table x="199" y="280" name="user">
+<table x="285" y="271" name="user_acount">
 <row name="id" null="0" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -65,7 +65,7 @@
 <part>login</part>
 </key>
 </table>
-<table x="693" y="462" name="person">
+<table x="671" y="361" name="person">
 <row name="id" null="0" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -82,11 +82,11 @@
 <part>id</part>
 </key>
 </table>
-<table x="353" y="151" name="review">
+<table x="533" y="205" name="review">
 <row name="id" null="0" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
-<row name="text" null="0" autoincrement="0">
+<row name="message" null="0" autoincrement="0">
 <datatype>MEDIUMTEXT</datatype>
 <default>'NULL'</default></row>
 <row name="id_movie" null="0" autoincrement="0">
@@ -97,31 +97,29 @@
 <datatype>INTEGER</datatype>
 <default>NULL</default><relation table="rating" row="id" />
 </row>
-<row name="id_user" null="0" autoincrement="0">
+<row name="id_user_acount" null="0" autoincrement="0">
 <datatype>INTEGER</datatype>
-<default>NULL</default><relation table="user" row="id" />
+<default>NULL</default><relation table="user_acount" row="id" />
 </row>
 <key type="PRIMARY" name="">
 <part>id</part>
 </key>
-<key type="INDEX" name="">
-</key>
 </table>
-<table x="193" y="102" name="rating">
+<table x="379" y="173" name="rating">
 <row name="id" null="0" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
-<row name="name" null="0" autoincrement="0">
+<row name="description" null="0" autoincrement="0">
 <datatype>VARCHAR(100)</datatype>
 <default>'NULL'</default></row>
 <key type="PRIMARY" name="">
 <part>id</part>
 </key>
 <key type="UNIQUE" name="">
-<part>name</part>
+<part>description</part>
 </key>
 </table>
-<table x="739" y="112" name="movie_genre">
+<table x="335" y="501" name="movie_genre">
 <row name="id_movie" null="0" autoincrement="0">
 <datatype>INTEGER</datatype>
 <default>NULL</default><relation table="movie" row="id" />
@@ -131,9 +129,11 @@
 <default>NULL</default><relation table="genre" row="id" />
 </row>
 <key type="PRIMARY" name="">
+<part>id_movie</part>
+<part>id_genre</part>
 </key>
 </table>
-<table x="538" y="342" name="actor">
+<table x="523" y="502" name="actor">
 <row name="id_movie" null="0" autoincrement="0">
 <datatype>INTEGER</datatype>
 <default>NULL</default><relation table="movie" row="id" />
@@ -143,9 +143,11 @@
 <default>NULL</default><relation table="person" row="id" />
 </row>
 <key type="PRIMARY" name="">
+<part>id_movie</part>
+<part>id_person</part>
 </key>
 </table>
-<table x="743" y="318" name="director">
+<table x="522" y="383" name="director">
 <row name="id_movie" null="0" autoincrement="0">
 <datatype>INTEGER</datatype>
 <default>NULL</default><relation table="movie" row="id" />
@@ -155,9 +157,11 @@
 <default>NULL</default><relation table="person" row="id" />
 </row>
 <key type="PRIMARY" name="">
+<part>id_movie</part>
+<part>id_person</part>
 </key>
 </table>
-<table x="938" y="118" name="genre">
+<table x="336" y="602" name="genre">
 <row name="id" null="0" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
