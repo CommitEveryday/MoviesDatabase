@@ -18,6 +18,7 @@ public class Main {
             System.out.println(ex.toString());
         }
         System.out.println(HibernateUtil.getSessionFactory().isClosed());
+        HibernateUtil.getSessionFactory().close();
         if (1==1)
             return;
 
