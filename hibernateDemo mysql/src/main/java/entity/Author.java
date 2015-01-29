@@ -4,9 +4,6 @@ import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
-/**
- * Created by user on 14.10.2014.
- */
 @Entity
 @Table(name = "author")
 public class Author {

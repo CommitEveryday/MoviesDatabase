@@ -4,15 +4,23 @@ import dao.hibernate.AuthorDAOImpl;
 import dao.hibernate.BookDAOImpl;
 import entity.Author;
 import entity.Book;
+import utils.HibernateUtil;
 
 import java.util.HashSet;
 import java.util.List;
 
-/**
- * Created by user on 14.10.2014.
- */
 public class Main {
     public static void main(String[] args) {
+        try {
+            HibernateUtil.getSessionFactory();
+        } catch (Exception ex) {
+            System.out.println("exception");
+            System.out.println(ex.toString());
+        }
+        System.out.println(HibernateUtil.getSessionFactory().isClosed());
+        if (1==1)
+            return;
+
         BookDAO bookDAO = new BookDAOImpl();
 
         Book book = new Book();

@@ -23,7 +23,16 @@
 
         <property name="hibernate.show_sql">true</property>
 
-        <mapping class="entity.Book" />
-        <mapping class="entity.Author" />
+        <!--<property name="connection.characterEncoding">UTF-8</property>-->
+
+        <!--<mapping class="entity.Book" />-->
+        <!--<mapping class="entity.Author" />-->
+
+        <mapping class="entity.Genre" />
+        <mapping class="entity.Movie" />
+        <mapping class="entity.Person" />
+        <mapping class="entity.Rating" />
+        <mapping class="entity.Review" />
+        <mapping class="entity.User_acount" />
     </session-factory>
 </hibernate-configuration>

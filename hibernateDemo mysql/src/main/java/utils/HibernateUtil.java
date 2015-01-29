@@ -6,10 +6,17 @@ import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.service.ServiceRegistry;
 
+import java.util.logging.Logger;
+import java.util.logging.Level;
+
 public class HibernateUtil {
     private static SessionFactory sessionFactory = buildSessionFactory();
 
     private static SessionFactory buildSessionFactory() {
+        //фильтруем сообщения в лог от hibernate
+//        Logger logger = Logger.getLogger("org.hibernate");
+//        logger.setLevel(Level.WARNING);
+
         try {
             Configuration configuration = new Configuration();
 //            configuration.setProperty("hibernate.show_sql", "true");
