@@ -1,15 +1,35 @@
 package entity;
 
+import org.hibernate.annotations.Type;
+
+import javax.persistence.*;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
+@Entity
+@Table(name = "person")
 public class Person {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private Integer id;
+    @Column(name = "name", unique = false, nullable = false, length = 100)
     private String name;
+    @Column(name = "surname", unique = false, nullable = true, length = 100)
     private String surname;
+    @Column(name = "birth", unique = false, nullable = false)
+    @Type(type="date")
     private Date birth;
+    @ManyToMany(fetch = FetchType.LAZY)
+    @JoinTable(name = "actor",
+            joinColumns = @JoinColumn(name = "id_person"),
+            inverseJoinColumns = @JoinColumn(name = "id_movie"))
     private Set<Movie> actorIn = new HashSet<Movie>();
+    @ManyToMany(fetch = FetchType.LAZY)
+    @JoinTable(name = "director",
+            joinColumns = @JoinColumn(name = "id_person"),
+            inverseJoinColumns = @JoinColumn(name = "id_movie"))
     private Set<Movie> directorIn = new HashSet<Movie>();
 
     public Set<Movie> getActorIn() {

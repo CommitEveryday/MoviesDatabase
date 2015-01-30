@@ -1,16 +1,40 @@
 package entity;
 
+import org.hibernate.annotations.Type;
+
+import javax.persistence.*;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
+@Entity
+@Table(name = "movie")
 public class Movie {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private Integer id;
+    @Column(name = "title", unique = false, nullable = false)
     private String title;
+    @Column(name = "premiere", unique = false, nullable = true)
+    @Type(type="date")
     private Date premiere;
+    @OneToMany(mappedBy = "movie", fetch = FetchType.LAZY)
     private Set<Review> reviews = new HashSet<Review>();
+    @ManyToMany(fetch = FetchType.LAZY)
+    @JoinTable(name = "movie_genre",
+            joinColumns = @JoinColumn(name = "id_movie"),
+            inverseJoinColumns = @JoinColumn(name = "id_genre"))
     private Set<Genre> genres = new HashSet<Genre>();
+    @ManyToMany(fetch = FetchType.LAZY)
+    @JoinTable(name = "actor",
+            joinColumns = @JoinColumn(name = "id_movie"),
+            inverseJoinColumns = @JoinColumn(name = "id_person"))
     private Set<Person> actors = new HashSet<Person>();
+    @ManyToMany(fetch = FetchType.LAZY)
+    @JoinTable(name = "director",
+            joinColumns = @JoinColumn(name = "id_movie"),
+            inverseJoinColumns = @JoinColumn(name = "id_person"))
     private Set<Person> directors = new HashSet<Person>();
 
     public Set<Person> getDirectors() {

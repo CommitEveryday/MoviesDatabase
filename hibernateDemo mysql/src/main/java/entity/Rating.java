@@ -1,11 +1,20 @@
 package entity;
 
+import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
+@Entity
+@Table(name = "rating")
 public class Rating {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private Integer id;
+    @Column(name = "description", unique = true, nullable = false, length = 100)
     private String description;
+
+    @OneToMany(mappedBy = "rating", fetch = FetchType.LAZY)
     private Set<Review> reviews = new HashSet<Review>();
 
     public Set<Review> getReviews() {

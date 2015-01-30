@@ -4,15 +4,41 @@ import dao.hibernate.AuthorDAOImpl;
 import dao.hibernate.BookDAOImpl;
 import entity.Author;
 import entity.Book;
+import entity.Movie;
+import entity.Person;
+import org.hibernate.Session;
 import utils.HibernateUtil;
 
+import java.util.Date;
+import java.text.SimpleDateFormat;
 import java.util.HashSet;
 import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
         try {
-            HibernateUtil.getSessionFactory();
+            Session session = HibernateUtil.getSessionFactory().openSession();
+            List<Movie> movies=(List<Movie>)session.createCriteria(Movie.class).list();
+            System.out.println(movies.size());
+            Movie newMovie = new Movie();
+            newMovie.setTitle("The Matrix");
+            SimpleDateFormat textFormat = new SimpleDateFormat("yyyy-MM-dd");
+            String paramDateAsString = "1999-03-31";
+            Date myDate = null;
+            myDate = textFormat.parse(paramDateAsString);
+            newMovie.setPremiere(myDate);
+            List<Person> persons=(List<Person>)session.createCriteria(Person.class).list();
+            System.out.println(persons.size());
+            newMovie.getActors().add(persons.get(0));
+            session.beginTransaction();
+//            session.save(newMovie);
+            Person keano = persons.get(0);
+
+           session.delete(persons.get(0));
+            session.getTransaction().commit();
+            for (Movie movie : keano.getActorIn())
+                System.out.println(movie.getTitle());
+
         } catch (Exception ex) {
             System.out.println("exception");
             System.out.println(ex.toString());
