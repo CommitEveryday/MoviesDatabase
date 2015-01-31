@@ -2,10 +2,7 @@ import dao.entity.AuthorDAO;
 import dao.entity.BookDAO;
 import dao.hibernate.AuthorDAOImpl;
 import dao.hibernate.BookDAOImpl;
-import entity.Author;
-import entity.Book;
-import entity.Movie;
-import entity.Person;
+import entity.*;
 import org.hibernate.Session;
 import utils.HibernateUtil;
 
@@ -28,16 +25,35 @@ public class Main {
             myDate = textFormat.parse(paramDateAsString);
             newMovie.setPremiere(myDate);
             List<Person> persons=(List<Person>)session.createCriteria(Person.class).list();
-            System.out.println(persons.size());
-            newMovie.getActors().add(persons.get(0));
+//            System.out.println(persons.size());
+//            newMovie.getActors().add(persons.get(0));
+
+            Rating rating1 = new Rating();
+            rating1.setDescription("отлично");
+            rating1.setId(5);
+            User_acount account1 = new User_acount();
+            account1.setLogin("test");
+            account1.setPassword("password");
+
+            Review rev = new Review();
+            rev.setMessage("отличный фильм!");
+            rev.setUser_acount(account1);
+            rev.setRating(rating1);
+            rev.setMovie(movies.get(0));
+
             session.beginTransaction();
 //            session.save(newMovie);
-            Person keano = persons.get(0);
+//            Person keano = persons.get(0);
+//
+//           session.delete(persons.get(0));
 
-           session.delete(persons.get(0));
+            session.save(rating1);
+            session.save(account1);
+//            session.save(rev);
+
             session.getTransaction().commit();
-            for (Movie movie : keano.getActorIn())
-                System.out.println(movie.getTitle());
+//            for (Movie movie : keano.getActorIn())
+//                System.out.println(movie.getTitle());
 
         } catch (Exception ex) {
             System.out.println("exception");
