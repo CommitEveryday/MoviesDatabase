@@ -41,14 +41,16 @@ public class Main {
             rev.setRating(rating1);
             rev.setMovie(movies.get(0));
 
+            List<Rating> ratings=(List<Rating>)session.createCriteria(Rating.class).list();
+
             session.beginTransaction();
 //            session.save(newMovie);
 //            Person keano = persons.get(0);
 //
 //           session.delete(persons.get(0));
-
-            session.save(rating1);
-            session.save(account1);
+            session.delete(ratings.get(0));
+//            session.save(rating1);
+//            session.save(account1);
 //            session.save(rev);
 
             session.getTransaction().commit();

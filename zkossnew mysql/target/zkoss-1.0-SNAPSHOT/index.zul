@@ -1,0 +1,25 @@
+<window title="Поиск" width="600px" border="normal" apply="com.bftcom.controller.CarController">
+    <hbox align="center">
+        Текст:
+        <textbox id="keywordBox" />
+        <button id="searchButton" label="Поиск"/>
+    </hbox>
+    <listbox id="carListbox" height="160px" emptyMessage="Автомобиле не найдены">
+        <listhead>
+            <listheader label="Модель" />
+            <listheader label="Цена" width="20%"/>
+        </listhead>
+        <template name="model">
+            <listitem>
+                <listcell label="${each.model}"></listcell>
+                <listcell>$<label value="${each.price}" /></listcell>
+            </listitem>
+        </template>
+    </listbox>
+    <hbox style="margin-top:20px">
+        <vbox>
+            <label id="modelLabel" />
+            <label id="priceLabel" />
+        </vbox>
+    </hbox>
+</window>
