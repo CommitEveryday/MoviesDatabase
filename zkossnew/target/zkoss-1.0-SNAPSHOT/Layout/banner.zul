@@ -1,0 +1,3 @@
+<vbox vflex="1" align="center" pack="center" spacing="20px" >
+	<label value="База данных фильмов" sclass="banner-head"  style="font-size:20pt; color: black"/>
+</vbox>

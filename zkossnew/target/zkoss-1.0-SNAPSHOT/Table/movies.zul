@@ -1,0 +1,58 @@
+<vbox apply="com.bftcom.Controller.MoviesController">
+    <label style="font-size: 16pt" width="100%">Список фильмов</label>
+    <grid id="moviesTable" emptyMessage="Фильмов в базе нет!">
+        <columns>
+            <column id="id" visible="false"></column>
+            <column label="Название"></column>
+            <column label="Дата премьеры"></column>
+            <column label="Жанр"></column>
+            <column label="Режиссёр"></column>
+            <column label="В главных ролях"></column>
+            <column id="gridShowReviewBt"></column>
+        </columns>
+        <rows/>
+    </grid>
+
+    <vbox id="reviewsVBox" visible="false">
+        <label id="reviewsLabel" style="font-size: 12pt" width="100%">Рецензии</label>
+        <grid id="reviewsTable" emptyMessage="Рецензий нет!">
+            <columns>
+                <column label="Автор"></column>
+                <column label="Оценка"></column>
+                <column label="Текст"></column>
+                <column id="gridDeleteReviewBt"></column>
+            </columns>
+            <rows/>
+        </grid>
+        <button id = "addedReview" label = "Добавить рецензию на фильм"/>
+    </vbox>
+
+    <vbox id="selReviewVBox" visible="false">
+        <label id="updateReviewLabel" style="font-size: 10pt" width="100%">Обновление рецензии</label>
+        <hbox>
+            Пользователь
+            <combobox id="userComboBox" readonly="true" constraint="no empty">
+                <template name="model">
+                    <comboitem label="${each.login}"/>
+                </template>
+            </combobox>
+        </hbox>
+        <hbox>
+            Оценка
+            <combobox id="ratingComboBox" readonly="true" constraint="no empty">
+                <template name="model">
+                    <comboitem label="${each.description}"/>
+                </template>
+            </combobox>
+        </hbox>
+        <hbox>
+            Рецензия
+            <textbox id = "messageTextBox" constraint="no empty"/>
+        </hbox>
+        <hbox>
+            <button id = "okReviewBt" label = "OK"/>
+            <button id = "cancelReviewBt" label = "Отмена"/>
+        </hbox>
+    </vbox>
+</vbox>
+

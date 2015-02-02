@@ -1,0 +1,15 @@
+<zk>
+	<borderlayout hflex="1" vflex="1" apply="com.bftcom.Controller.Layout.BookmarkChangeController">
+		<north height="50px" border="none"  style="background-color: #F8F8FF">
+			<include src="/Layout/banner.zul"/>
+		</north>
+		<west width="260px" border="none" collapsible="true" splittable="true" minsize="300">
+			<include src="/Layout/sidebar.zul"/>
+		</west>
+		<center id="mainContent" autoscroll="true" border="none" self="@insert(content)">
+		</center>
+		<south height="30px" border="none" style="background-color: #F8F8FF">
+			<include src="/Layout/footer.zul"/>
+		</south>
+	</borderlayout>
+</zk>

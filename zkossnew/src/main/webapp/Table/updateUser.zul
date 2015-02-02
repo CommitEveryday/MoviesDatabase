@@ -1,0 +1,17 @@
+<vbox id = "updateUser" spacing="20px" apply="com.bftcom.Controller.updateUser">
+	<vbox>
+        Изменение пользователя:
+        <hbox>
+            Login
+            <textbox id = "login" />
+        </hbox>
+        <hbox>
+            Password
+            <textbox id = "password" />
+        </hbox>
+        <hbox>
+            <button id = "saveUpUser" label = "Изменить"/>
+            <button id = "cancelUpdateUser" label = "Отмена"/>
+        </hbox>
+	</vbox>
+</vbox>

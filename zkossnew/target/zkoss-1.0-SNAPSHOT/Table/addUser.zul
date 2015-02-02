@@ -1,0 +1,17 @@
+<vbox id = "addUser" spacing="20px" apply="com.bftcom.Controller.addUser">
+	<vbox>
+        Добавление нового пользователя:
+        <hbox>
+            Login
+            <textbox id = "login" />
+        </hbox>
+        <hbox>
+            Password
+            <textbox id = "password" />
+        </hbox>
+        <hbox>
+            <button id = "saveUser" label = "Добавить"/>
+            <button id = "cancelAddUser" label = "Отмена"/>
+        </hbox>
+	</vbox>
+</vbox>
