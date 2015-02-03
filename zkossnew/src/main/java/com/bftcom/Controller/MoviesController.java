@@ -1,9 +1,9 @@
 package com.bftcom.Controller;
 
-import com.bft.bstu.pv41.bezkrovnuy.entity.Movie;
-import com.bft.bstu.pv41.bezkrovnuy.entity.Rating;
-import com.bft.bstu.pv41.bezkrovnuy.entity.Review;
-import com.bft.bstu.pv41.bezkrovnuy.entity.User_acount;
+import com.project.Model.entity.Movie;
+import com.project.Model.entity.Rating;
+import com.project.Model.entity.Review;
+import com.project.Model.entity.User_acount;
 import org.zkoss.zk.ui.Component;
 import org.zkoss.zk.ui.event.Event;
 import  org.zkoss.zk.ui.event.EventListener;
@@ -13,11 +13,9 @@ import org.zkoss.zk.ui.select.annotation.Listen;
 import org.zkoss.zk.ui.select.annotation.Wire;
 import org.zkoss.zk.ui.util.Clients;
 import org.zkoss.zul.*;
-import com.bft.bstu.pv41.bezkrovnuy.Service.HibernateFactory;
+import com.project.Model.Service.HibernateFactory;
 
-import java.text.SimpleDateFormat;
 import java.util.*;
-import java.util.Calendar;
 
 public class MoviesController  extends SelectorComposer<Component> {
     @Wire

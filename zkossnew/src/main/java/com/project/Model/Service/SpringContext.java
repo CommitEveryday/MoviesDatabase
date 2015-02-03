@@ -1,4 +1,4 @@
-package com.bft.bstu.pv41.bezkrovnuy.Service;
+package com.project.Model.Service;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 

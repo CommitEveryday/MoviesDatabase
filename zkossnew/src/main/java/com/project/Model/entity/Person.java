@@ -1,4 +1,4 @@
-package com.bft.bstu.pv41.bezkrovnuy.entity;
+package com.project.Model.entity;
 
 
 import org.hibernate.annotations.Type;

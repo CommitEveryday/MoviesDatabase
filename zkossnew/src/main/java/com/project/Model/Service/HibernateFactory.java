@@ -1,6 +1,6 @@
-package com.bft.bstu.pv41.bezkrovnuy.Service;
+package com.project.Model.Service;
 
-import com.bft.bstu.pv41.bezkrovnuy.entity.*;
+import com.project.Model.entity.*;
 
 public final class HibernateFactory {
     public static HibernateUtil<Genre, Integer> genreHiber = new HibernateUtil<Genre, Integer>();

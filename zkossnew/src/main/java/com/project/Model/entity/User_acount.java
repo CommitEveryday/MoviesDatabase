@@ -1,4 +1,4 @@
-package com.bft.bstu.pv41.bezkrovnuy.entity;
+package com.project.Model.entity;
 
 import javax.persistence.*;
 import java.io.Serializable;

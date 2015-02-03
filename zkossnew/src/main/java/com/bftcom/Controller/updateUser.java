@@ -1,7 +1,7 @@
 package com.bftcom.Controller;
 
-import com.bft.bstu.pv41.bezkrovnuy.Service.HibernateFactory;
-import com.bft.bstu.pv41.bezkrovnuy.entity.User_acount;
+import com.project.Model.Service.HibernateFactory;
+import com.project.Model.entity.User_acount;
 import org.zkoss.zk.ui.Component;
 import org.zkoss.zk.ui.Sessions;
 import org.zkoss.zk.ui.select.SelectorComposer;
