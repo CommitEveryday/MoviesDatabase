@@ -9,10 +9,4 @@ public final class SpringContext {
     public static ClassPathXmlApplicationContext getInstance(){
         return instance;
     }
-
-//    private static ApplicationContext instance = new ClassPathXmlApplicationContext("classpath:spring-config.xml");
-//
-//    public static ApplicationContext getInstance(){
-//        return instance;
-//    }
 }

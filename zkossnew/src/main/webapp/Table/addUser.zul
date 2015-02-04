@@ -1,4 +1,4 @@
-<vbox id = "addUser" spacing="20px" apply="com.bftcom.Controller.addUser">
+<vbox id = "addUser" spacing="20px" apply="addUser">
 	<vbox>
         Добавление нового пользователя:
         <hbox>

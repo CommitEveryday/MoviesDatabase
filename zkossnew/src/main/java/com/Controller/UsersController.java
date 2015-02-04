@@ -1,4 +1,4 @@
-package com.bftcom.Controller;
+package com.Controller;
 
 import com.project.Model.Service.HibernateFactory;
 import com.project.Model.entity.User_acount;

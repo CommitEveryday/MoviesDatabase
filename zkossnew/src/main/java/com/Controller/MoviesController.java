@@ -1,4 +1,4 @@
-package com.bftcom.Controller;
+package com.Controller;
 
 import com.project.Model.entity.Movie;
 import com.project.Model.entity.Rating;

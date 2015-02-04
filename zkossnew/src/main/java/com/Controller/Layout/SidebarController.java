@@ -1,7 +1,7 @@
-package com.bftcom.Controller.Layout;
+package com.Controller.Layout;
 
-import com.bftcom.Controller.Layout.Service.Page;
-import com.bftcom.Controller.Layout.Service.PageConfig;
+import com.Controller.Layout.Service.PageConfig;
+import com.Controller.Layout.Service.Page;
 import org.zkoss.zk.ui.Component;
 import org.zkoss.zk.ui.Executions;
 import org.zkoss.zk.ui.event.Event;

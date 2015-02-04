@@ -1,4 +1,4 @@
-<vbox apply="com.bftcom.Controller.UsersController">
+<vbox apply="UsersController">
     <vbox width = "50%">
     	<label value = "Пользователи" style = "font-size: 16pt"/>
     		<listbox  id="userTable" emptyMessage="Пользователи не найдены">

@@ -1,5 +1,5 @@
 <zk>
-	<borderlayout hflex="1" vflex="1" apply="com.bftcom.Controller.Layout.BookmarkChangeController">
+	<borderlayout hflex="1" vflex="1" apply="BookmarkChangeController">
 		<north height="50px" border="none"  style="background-color: #F8F8FF">
 			<include src="/Layout/banner.zul"/>
 		</north>

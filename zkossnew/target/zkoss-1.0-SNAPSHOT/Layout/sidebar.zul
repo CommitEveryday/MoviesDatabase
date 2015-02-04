@@ -1,6 +1,6 @@
 <grid hflex="1" vflex="1" sclass="sidebar"
 	id="fnList"
-	apply="com.bftcom.Controller.Layout.SidebarController">
+	apply="SidebarController">
 	<columns>
 		<column width="100%"/>
 	</columns>
