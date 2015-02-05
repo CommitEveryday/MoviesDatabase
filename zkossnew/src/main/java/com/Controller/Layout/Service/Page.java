@@ -2,9 +2,6 @@ package com.Controller.Layout.Service;
 
 import java.io.Serializable;
 
-/**
- * Created by Marolok on 08.01.2015.
- */
 public class Page implements Serializable {
     private static final long serialVersionUID = 1L;
     String name;
